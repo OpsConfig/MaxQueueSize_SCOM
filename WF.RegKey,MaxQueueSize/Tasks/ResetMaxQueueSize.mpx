@@ -1,0 +1,27 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Tasks>
+      <Task ID="WF.RegKey.ResetMaxQueueSize.AgentTask" Accessibility="Internal" Target="SC!Microsoft.SystemCenter.ManagedComputer" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Custom</Category>
+        <ProbeAction ID="Probe" TypeID="Windows!Microsoft.Windows.PowerShellProbe">
+          <ScriptName>ResetMaxQueueSize.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/ResetMaxQueueSize.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters />
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </ProbeAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="WF.RegKey.ResetMaxQueueSize.AgentTask">
+          <Name>Max Queue Size Reset</Name>
+          <Description>Reset Max Queue Size Regkey to default value of 15 MB</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

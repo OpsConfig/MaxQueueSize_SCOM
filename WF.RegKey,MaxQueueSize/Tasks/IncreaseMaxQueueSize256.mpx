@@ -1,0 +1,27 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Tasks>
+      <Task ID="Sample.RegKey.IncreaseMaxQueueSize.256.AgentTask" Accessibility="Internal" Target="SC!Microsoft.SystemCenter.ManagedComputer" Enabled="true" Timeout="300" Remotable="true">
+        <Category>Custom</Category>
+        <ProbeAction ID="Probe" TypeID="Windows!Microsoft.Windows.PowerShellProbe">
+          <ScriptName>IncreaseMaxQueueSize256.ps1</ScriptName>
+          <ScriptBody>$IncludeFileContent/Scripts/IncreaseMaxQueueSize256.ps1$</ScriptBody>
+          <SnapIns />
+          <Parameters />
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <StrictErrorHandling>true</StrictErrorHandling>
+        </ProbeAction>
+      </Task>
+    </Tasks>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Sample.RegKey.IncreaseMaxQueueSize.256.AgentTask">
+          <Name>Max Queue Size Increase 256 MB</Name>
+          <Description>Increase Max Queue Size Regkey to 256 MB</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
